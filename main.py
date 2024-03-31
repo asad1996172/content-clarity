@@ -2,9 +2,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+import imghdr
 import os
 from urllib.parse import urlparse
-import imghdr
+
 import cv2
 import moviepy.editor as mp
 import numpy as np
@@ -218,7 +219,7 @@ if __name__ == "__main__":
         original_image_placeholder.empty()
         processed_image_label.empty()
         processed_image_placeholder.empty()
-        
+
         if uploaded_file is not None:
             file_path = os.path.join(upload_folder, uploaded_file.name)
             with open(file_path, "wb") as f:
@@ -238,7 +239,7 @@ if __name__ == "__main__":
             if imghdr.what(output_file_path):
                 original_image_label.header("Original Image")
                 original_image_placeholder.image(file_path)
-                
+
                 processed_image_label.header("Processed Image")
                 processed_image_placeholder.image(output_file_path)
 
@@ -247,15 +248,15 @@ if __name__ == "__main__":
                         label="Download Processed Image",
                         data=file,
                         file_name="processed_image.png",
-                        mime="image/png"
+                        mime="image/png",
                     )
-                
+
             else:
                 original_image_label.header("Original Video")
                 video_file = open(file_path, "rb")
                 video_bytes = video_file.read()
                 original_image_placeholder.video(video_bytes)
-                
+
                 processed_image_label.header("Processed Video")
                 video_file = open(output_file_path, "rb")
                 video_bytes = video_file.read()
@@ -265,8 +266,8 @@ if __name__ == "__main__":
                     btn = st.download_button(
                         label="Download Processed Video",
                         data=file,
-                        file_name="processed_video.png",
-                        mime="video/mp4"
+                        file_name="processed_video.mp4",
+                        mime="video/mp4",
                     )
         else:
             st.info(

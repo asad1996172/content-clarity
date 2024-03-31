@@ -19,7 +19,7 @@ These instructions will get your copy of the project up and running on your loca
 - Run streamlit application: `streamlit run main.py`
 
 #### Demo to Setup and Run
-[![Watch the video](https://img.youtube.com/vi/1Q8Q6Q1Z1QY/maxresdefault.jpg)](https://youtu.be/1Q8Q6Q1Z1QY)
+[![Video Instructions to Run Code](https://i.ytimg.com/vi/yUbNbFqGLZg/hqdefault.jpg)](https://youtu.be/yUbNbFqGLZg)
 
 ### Technical Details
 The pipeline for this project looks like this: `Object Detection -> Segmentation -> Face Detection -> Applying Mask`
